@@ -3,14 +3,41 @@ Lopublic class ParkingLot {
     private Location address;
     private ParkingRate parkingRate;
   
-    private int compactSpotCount;
     private int largeSpotCount;
-    private int motorbikeSpotCount;
-    private int electricSpotCount;
-    private final int maxCompactCount;
     private final int maxLargeCount;
-    private final int maxMotorbikeCount;
-    private final int maxElectricCount;
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Location getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(Location address) {
+		this.address = address;
+	}
+
+	public ParkingRate getParkingRate() {
+		return this.parkingRate;
+	}
+
+	public void setParkingRate(ParkingRate parkingRate) {
+		this.parkingRate = parkingRate;
+	}
+
+	public int getLargeSpotCount() {
+		return this.largeSpotCount;
+	}
+
+	public void setLargeSpotCount(int largeSpotCount) {
+		this.largeSpotCount = largeSpotCount;
+	}
+
   
     private HashMap<String, EntrancePanel> entrancePanels;
     private HashMap<String, ExitPanel> exitPanels;
@@ -58,47 +85,12 @@ Lopublic class ParkingLot {
     }
   
     public boolean isFull(VehicleType type) {
-      // trucks and vans can only be parked in LargeSpot
-      if (type == VehicleType.Truck || type == VehicleType.Van) {
-        return largeSpotCount >= maxLargeCount;
-      }
-  
-      // motorbikes can only be parked at motorbike spots
-      if (type == VehicleType.Motorbike) {
-        return motorbikeSpotCount >= maxMotorbikeCount;
-      }
-  
-      // cars can be parked at compact or large spots
-      if (type == VehicleType.Car) {
-        return (compactSpotCount + largeSpotCount) >= (maxCompactCount + maxLargeCount);
-      }
-  
-      // electric car can be parked at compact, large or electric spots
-      return (compactSpotCount + largeSpotCount + electricSpotCount) >= (maxCompactCount + maxLargeCount
-          + maxElectricCount);
+    return largeSpotCount >= maxLargeCount;
     }
-  
+
     // increment the parking spot count based on the vehicle type
     private boolean incrementSpotCount(VehicleType type) {
-      if (type == VehicleType.Truck || type == VehicleType.Van) {
-        largeSpotCount++;
-      } else if (type == VehicleType.Motorbike) {
-        motorbikeSpotCount++;
-      } else if (type == VehicleType.Car) {
-        if (compactSpotCount < maxCompactCount) {
-          compactSpotCount++;
-        } else {
-          largeSpotCount++;
-        }
-      } else { // electric car
-        if (electricSpotCount < maxElectricCount) {
-          electricSpotCount++;
-        } else if (compactSpotCount < maxCompactCount) {
-          compactSpotCount++;
-        } else {
-          largeSpotCount++;
-        }
-      }
+      largeSpotCount++;
     }
   
     public boolean isFull() {
