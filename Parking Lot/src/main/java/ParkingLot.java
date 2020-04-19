@@ -1,4 +1,4 @@
-Lopublic class ParkingLot {
+public class ParkingLot {
     private String name;
     private Location address;
     private ParkingRate parkingRate;
