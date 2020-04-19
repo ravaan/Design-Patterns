@@ -1,8 +1,9 @@
 package driver;
 
 
-import users.AccountStatus;
-import users.Admin;
+import accounts.AccountStatus;
+import accounts.Admin;
+import parking.LargeSpot;
 
 public class MainDriver {
     public static void main(String[] args) {
@@ -12,5 +13,11 @@ public class MainDriver {
         Admin adminAccount = new Admin(userName, password, status);
         System.out.println(adminAccount.getPassword());
         System.out.println(adminAccount.resetPassword());
+
+
+        // Parking Spot testing
+        LargeSpot spot = new LargeSpot("1234");
+        spot.setFree(true);
+        System.out.println(spot.isFree());
     }
 }

@@ -1,9 +1,15 @@
-package users;
+package accounts;
 
 public abstract class Account {
     private String userName;
     private String password;
     private AccountStatus status;
+
+    public Account() {
+        this.userName = "userName";
+        this.password = "password";
+        this.status = AccountStatus.ACTIVE;
+    }
 
     Account(String userName, String password, AccountStatus status) {
         this.userName = userName;
