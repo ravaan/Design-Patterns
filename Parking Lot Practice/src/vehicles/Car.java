@@ -7,4 +7,8 @@ public class Car extends Vehicle {
         super(licenseNumber, VehicleType.CAR);
         this.name = name;
     }
+
+    public String getName() {
+        return name;
+    }
 }

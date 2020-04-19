@@ -4,6 +4,7 @@ package driver;
 import accounts.AccountStatus;
 import accounts.Admin;
 import parking.LargeSpot;
+import vehicles.Car;
 
 public class MainDriver {
     public static void main(String[] args) {
@@ -19,5 +20,10 @@ public class MainDriver {
         LargeSpot spot = new LargeSpot("1234");
         spot.setFree(true);
         System.out.println(spot.isFree());
+
+        //Vehicles testing
+        Car honda = new Car("UP78BE5601", "honda");
+        System.out.println(honda.getName());
+
     }
 }
