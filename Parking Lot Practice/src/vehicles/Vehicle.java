@@ -8,4 +8,8 @@ public abstract class Vehicle {
         this.licenseNumber = licenseNumber;
         this.type = type;
     }
+
+    public VehicleType getType() {
+        return type;
+    }
 }

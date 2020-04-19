@@ -10,6 +10,10 @@ public abstract class ParkingSpot {
         this.spotType = spotType;
     }
 
+    public ParkingSpotType getSpotType() {
+        return spotType;
+    }
+
     public boolean isFree() {
         return this.free;
     }
