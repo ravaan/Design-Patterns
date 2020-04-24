@@ -1,10 +1,13 @@
 package parking;
 
-import vehicles.Vehicle;
-
 public class ParkingDisplayBoard {
     private String id;
     private LargeSpot largeFreeSpot;
+
+    public ParkingDisplayBoard(String id, LargeSpot largeFreeSpot) {
+        this.id = id;
+        this.largeFreeSpot = largeFreeSpot;
+    }
 
     public LargeSpot getLargeFreeSpot() {
         return largeFreeSpot;
@@ -14,16 +17,8 @@ public class ParkingDisplayBoard {
         this.largeFreeSpot = largeFreeSpot;
     }
 
-    public void showEmptySpotNumber(Vehicle vehicle) {
-        //noinspection SwitchStatementWithTooFewBranches
-        switch (vehicle.getType()) {
-            case CAR:
-                System.out.println("CAR: " + largeFreeSpot.toString());
-                break;
-            default:
-                System.out.println("WRONG ENUM TYPE");
-                break;
-        }
+    public void showEmptySpotNumber() {
+        System.out.println("LargeSpot: " + largeFreeSpot.getNumber());
     }
 }
 

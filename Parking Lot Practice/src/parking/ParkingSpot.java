@@ -10,6 +10,10 @@ public abstract class ParkingSpot {
         this.spotType = spotType;
     }
 
+    public String getNumber() {
+        return number;
+    }
+
     public ParkingSpotType getSpotType() {
         return spotType;
     }
