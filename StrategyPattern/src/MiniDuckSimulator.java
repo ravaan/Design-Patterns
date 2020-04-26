@@ -4,5 +4,7 @@ public class MiniDuckSimulator {
         exotic.performFly();
         exotic.performQuack();
         exotic.display();
+        exotic.setFlyStrategy(new NormalFly());
+        exotic.performFly();
     }
 }
