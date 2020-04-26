@@ -3,7 +3,7 @@ public class ForecastDisplay implements Observer, Display {
     private float currentPressure;
     private Subject weatherData;
 
-    public ForecastDisplay(Subject weatherData) {
+    ForecastDisplay(Subject weatherData) {
         this.currentPressure = 30.0f;
         this.weatherData = weatherData;
         weatherData.registerObserver(this);

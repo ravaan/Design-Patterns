@@ -3,7 +3,7 @@ public class CurrentConditionDisplay implements Observer, Display {
     private float humidity;
     private Subject weatherData;
 
-    public CurrentConditionDisplay(Subject weatherData) {
+    CurrentConditionDisplay(Subject weatherData) {
         this.weatherData = weatherData;
         weatherData.registerObserver(this);
     }
@@ -21,7 +21,7 @@ public class CurrentConditionDisplay implements Observer, Display {
         System.out.println("Current Conditions: " + temperature + "C degrees and " + humidity + "% humidity!");
     }
 
-    public void unsubscribe() {
+    void unsubscribe() {
         weatherData.removeObserver(this);
     }
 }
