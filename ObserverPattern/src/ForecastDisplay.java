@@ -15,8 +15,8 @@ public class ForecastDisplay implements Observer, Display {
     }
 
     @Override
-    public void update(Subject o) {
-        WeatherData weatherData = (WeatherData) o;
+    public void update() {
+        WeatherData weatherData = (WeatherData) this.weatherData;
         lastPressure = currentPressure;
         currentPressure = weatherData.getPressure();
         display();

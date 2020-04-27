@@ -9,8 +9,8 @@ public class CurrentConditionDisplay implements Observer, Display {
     }
 
     @Override
-    public void update(Subject o) {
-        WeatherData weatherData = (WeatherData) o;
+    public void update() {
+        WeatherData weatherData = (WeatherData) this.weatherData;
         this.humidity = weatherData.getHumidity();
         this.temperature = weatherData.getTemperature();
         display();

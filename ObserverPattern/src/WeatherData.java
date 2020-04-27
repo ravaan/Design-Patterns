@@ -35,7 +35,7 @@ public class WeatherData implements Subject {
 
     @Override
     public void notifyObservers() {
-        for (Observer observer : observers) observer.update(this);
+        for (Observer observer : observers) observer.update();
     }
 
     private void measurementChanged() {
