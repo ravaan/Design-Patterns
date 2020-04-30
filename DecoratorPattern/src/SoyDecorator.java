@@ -1,7 +1,7 @@
-public class Soy extends ExtrasDecorator {
+public class SoyDecorator extends ExtrasDecorator {
     Beverage beverage;
 
-    public Soy(Beverage beverage) {
+    public SoyDecorator(Beverage beverage) {
         this.beverage = beverage;
     }
 

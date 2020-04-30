@@ -1,7 +1,7 @@
-public class Mocha extends ExtrasDecorator {
+public class MochaDecorator extends ExtrasDecorator {
     Beverage beverage;
 
-    public Mocha(Beverage beverage) {
+    public MochaDecorator(Beverage beverage) {
         this.beverage = beverage;
     }
 

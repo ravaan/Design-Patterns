@@ -1,7 +1,7 @@
-public class Whip extends ExtrasDecorator {
+public class WhipDecorator extends ExtrasDecorator {
     Beverage beverage;
 
-    public Whip(Beverage beverage) {
+    public WhipDecorator(Beverage beverage) {
         this.beverage = beverage;
     }
 
